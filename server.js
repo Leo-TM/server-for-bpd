@@ -14,19 +14,21 @@ app.post('/api/chk',(req,res)=>
     let mobileNumber = req.body.mobileNumber; 
     let otpNumber =  Math.floor((Math.random()*99999) + 10000);
     console.log(otpNumber);
+    res.send({mobileNumber,otpNumber});
 
-    const twilio = require('twilio');
-    const accountSid = "AC1d949a979d300735b367f90d27eae347";
-    const authToken  = "683d4d07768ce5fe7eaf980ad0744ce4";
 
-    let client = new twilio(accountSid, authToken);
+    // const twilio = require('twilio');
+    // const accountSid = "AC1d949a979d300735b367f90d27eae347";
+    // const authToken  = "683d4d07768ce5fe7eaf980ad0744ce4";
 
-    client.messages.create({
-        body: 'Hello from Node',
-        to: '+919922855024',  // Text this number
-        from: '(812) 461-6296 ' // From a valid Twilio number
-    })
-    .then((message) => console.log(message));
+    // let client = new twilio(accountSid, authToken);
+
+    // client.messages.create({
+    //     body: 'Hello from Node',
+    //     to: '+919922855024',  // Text this number
+    //     from: '(812) 461-6296 ' // From a valid Twilio number
+    // })
+    // .then((message) => console.log(message));
     
 
 
