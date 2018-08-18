@@ -24,7 +24,7 @@ app.post('/api/chk',(req,res)=>
     let client = new twilio(accountSid, authToken);
 
     client.messages.create({
-        body: 'otpNumber',
+        body: otpNumber,
         to: `+91${mobileNumber}`,  // Text this number
         from: '(812) 461-6296 ' // From a valid Twilio number
     })
